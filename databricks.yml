@@ -41,8 +41,10 @@ targets:
         default: "capstone_project_staging"
         description: The catalog to use in staging
     permissions:
-      - user_name: rianshabani@outlook.com
+      - service_principal_name: a85e2577-aa79-4435-b585-5a8e408ab14a
         level: CAN_MANAGE
+    run_as:
+      service_principal_name: a85e2577-aa79-4435-b585-5a8e408ab14a
     presets:
       name_prefix: '[staging] '
 
@@ -56,7 +58,9 @@ targets:
         default: "capstone_project_prod"
         description: The catalog to use in production
     permissions:
-      - user_name: rianshabani@outlook.com
+      - service_principal_name: b6c8ad1f-4a39-4945-b9f8-3b551b68e826
         level: CAN_MANAGE
+    run_as:
+      service_principal_name: b6c8ad1f-4a39-4945-b9f8-3b551b68e826
     presets:
       name_prefix: '[production]'
