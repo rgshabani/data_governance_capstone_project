@@ -73,4 +73,4 @@ wcwidth==0.8.1
 wheel==0.47.0
 zstandard==0.25.0
 
-capstone_project @ file:./dist/capstone_project-0.0.1-py3-none-any.whl
+# capstone_project is installed locally, not in CI
