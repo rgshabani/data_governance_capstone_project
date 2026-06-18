@@ -1,0 +1,11 @@
+resources:
+  pipelines:
+    bronze_dlt_pipeline:
+      name: bronze_dlt_pipeline
+      catalog: capstone_project_dev
+      target: bronze
+      libraries:
+        - notebook:
+            path: ../etl/notebooks/bronze_ingestion.ipynb
+      development: true
+      serverless: true
