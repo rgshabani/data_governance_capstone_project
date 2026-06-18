@@ -3,21 +3,13 @@ resources:
     medallion_pipeline_job:
       name: medallion_pipeline_job
       tasks:
-        - task_key: run_bronze
-          notebook_task:
-            notebook_path: ../etl/notebooks/bronze_ingestion.ipynb
+        - task_key: run_pipeline
+          pipeline_task:
+            pipeline_id: ${resources.pipelines.metadata_governance_pipeline.id}
 
-        - task_key: run_silver
-          depends_on:
-            - task_key: run_bronze
-          notebook_task:
-            notebook_path: ../etl/notebooks/silver_validation.ipynb
-
-        - task_key: run_gold
-          depends_on:
-            - task_key: run_silver
-          notebook_task:
-            notebook_path: ../etl/notebooks/gold_metrics.ipynb
+      email_notifications:
+        on_failure:
+          - demakurinese@gmail.com
 
       schedule:
         quartz_cron_expression: "0 0 6 * * ?"
