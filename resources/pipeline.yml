@@ -3,6 +3,7 @@ resources:
     metadata_governance_pipeline:
       name: metadata_governance_pipeline
       catalog: capstone_project_dev
+      schema: bronze
       libraries:
         - notebook:
             path: ../etl/notebooks/bronze_ingestion.ipynb
