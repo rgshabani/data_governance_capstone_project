@@ -1,0 +1,14 @@
+resources:
+  pipelines:
+    metadata_governance_pipeline:
+      name: metadata_governance_pipeline
+      catalog: capstone_project_dev
+      libraries:
+        - notebook:
+            path: ../etl/notebooks/bronze_ingestion.ipynb
+        - notebook:
+            path: ../etl/notebooks/silver_validation.ipynb
+        - notebook:
+            path: ../etl/notebooks/gold_metrics.ipynb
+      development: true
+      serverless: true
